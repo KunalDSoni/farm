@@ -2,3 +2,5 @@ node_modules/
 .DS_Store
 original/shots/
 build-shots/
+export-shots/
+build-shots/
