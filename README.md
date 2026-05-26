@@ -1,6 +1,8 @@
 # Mango Farm — Website Rebuild
 
-A static website rebuild for [The Backyard Group](https://www.thebackyardgroup.com), a Kesar mango products company. The workflow scrapes the original Wix site using Playwright, then delivers a clean, framework-free HTML/CSS/JS site.
+Live site: [https://kunaldsoni.github.io/farm/](https://kunaldsoni.github.io/farm/)
+
+A static website for a Kesar mango products company. The workflow scrapes the original Wix site using Playwright, then delivers a clean, framework-free HTML/CSS/JS site.
 
 ## Project Structure
 
