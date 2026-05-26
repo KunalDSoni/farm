@@ -1,0 +1,188 @@
+{
+  "title": "Gallery | The Backyard & Co.",
+  "imgs": [
+    {
+      "src": "https://static.wixstatic.com/media/da8c02_e6d385969fe844e4bb2ce42fcd4a4a30~mv2.png/v1/fill/w_314,h_124,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/oval%20logo.png",
+      "alt": "oval logo.png",
+      "w": 314,
+      "h": 124
+    },
+    {
+      "src": "https://static.wixstatic.com/media/da8c02_6e493d77272247fabf67163f907ab9c8~mv2.jpg/v1/fill/w_373,h_280,q_90,enc_avif,quality_auto/da8c02_6e493d77272247fabf67163f907ab9c8~mv2.jpg",
+      "alt": "",
+      "w": 373,
+      "h": 280
+    },
+    {
+      "src": "https://static.wixstatic.com/media/da8c02_ce7fcc27bbb94edaa42ea21f9a416060~mv2.jpg/v1/fill/w_374,h_280,q_90,enc_avif,quality_auto/da8c02_ce7fcc27bbb94edaa42ea21f9a416060~mv2.jpg",
+      "alt": "",
+      "w": 374,
+      "h": 280
+    },
+    {
+      "src": "https://static.wixstatic.com/media/da8c02_38d271a017c94fa58f7009cb996bc5ce~mv2.jpg/v1/fill/w_373,h_280,q_90,enc_avif,quality_auto/da8c02_38d271a017c94fa58f7009cb996bc5ce~mv2.jpg",
+      "alt": "",
+      "w": 373,
+      "h": 280
+    },
+    {
+      "src": "https://static.wixstatic.com/media/da8c02_21aec9f9bd9f4c279017acb22f0d48a9~mv2.jpeg/v1/fill/w_373,h_280,q_90,enc_avif,quality_auto/da8c02_21aec9f9bd9f4c279017acb22f0d48a9~mv2.jpeg",
+      "alt": "",
+      "w": 373,
+      "h": 280
+    },
+    {
+      "src": "https://static.wixstatic.com/media/da8c02_19b690e712c24db9b6ea71c3e97480f6~mv2.jpg/v1/fill/w_374,h_280,q_90,enc_avif,quality_auto/da8c02_19b690e712c24db9b6ea71c3e97480f6~mv2.jpg",
+      "alt": "",
+      "w": 374,
+      "h": 280
+    },
+    {
+      "src": "https://static.wixstatic.com/media/da8c02_b197f52ae7ce47e0a61265f62c6e2102~mv2.jpeg/v1/fill/w_373,h_280,q_90,enc_avif,quality_auto/da8c02_b197f52ae7ce47e0a61265f62c6e2102~mv2.jpeg",
+      "alt": "",
+      "w": 373,
+      "h": 280
+    },
+    {
+      "src": "https://static.wixstatic.com/media/da8c02_14ac60840420481e98cee8be3d1bba0b~mv2.jpg/v1/fill/w_373,h_280,q_90,enc_avif,quality_auto/da8c02_14ac60840420481e98cee8be3d1bba0b~mv2.jpg",
+      "alt": "",
+      "w": 373,
+      "h": 280
+    },
+    {
+      "src": "https://static.wixstatic.com/media/da8c02_0efe8d5d556445d0ac8e1217b1928196~mv2.jpeg/v1/fill/w_374,h_280,q_90,enc_avif,quality_auto/da8c02_0efe8d5d556445d0ac8e1217b1928196~mv2.jpeg",
+      "alt": "",
+      "w": 374,
+      "h": 280
+    },
+    {
+      "src": "https://static.wixstatic.com/media/da8c02_491e169a491e421e8da2da392905fa54~mv2.jpg/v1/fill/w_373,h_280,q_90,enc_avif,quality_auto/da8c02_491e169a491e421e8da2da392905fa54~mv2.jpg",
+      "alt": "",
+      "w": 373,
+      "h": 280
+    },
+    {
+      "src": "https://static.wixstatic.com/media/da8c02_d7e957aec8b6463da917c36508b1b7ce~mv2.jpg/v1/fill/w_373,h_280,q_90,enc_avif,quality_auto/da8c02_d7e957aec8b6463da917c36508b1b7ce~mv2.jpg",
+      "alt": "",
+      "w": 373,
+      "h": 280
+    },
+    {
+      "src": "https://static.wixstatic.com/media/da8c02_d06ca912ea4047a69be8960d7b4c616f~mv2.jpeg/v1/fill/w_374,h_280,q_90,enc_avif,quality_auto/da8c02_d06ca912ea4047a69be8960d7b4c616f~mv2.jpeg",
+      "alt": "",
+      "w": 374,
+      "h": 280
+    },
+    {
+      "src": "https://static.wixstatic.com/media/da8c02_45b453c39dcf440891a875099b174c48~mv2.jpg/v1/fill/w_373,h_280,q_90,enc_avif,quality_auto/da8c02_45b453c39dcf440891a875099b174c48~mv2.jpg",
+      "alt": "",
+      "w": 373,
+      "h": 280
+    },
+    {
+      "src": "https://static.wixstatic.com/media/da8c02_c84e3430195c4ec9a11507662e551518~mv2.jpg/v1/fill/w_373,h_280,q_90,enc_avif,quality_auto/da8c02_c84e3430195c4ec9a11507662e551518~mv2.jpg",
+      "alt": "",
+      "w": 373,
+      "h": 280
+    },
+    {
+      "src": "https://static.wixstatic.com/media/da8c02_e2fbbc656bf849a18a60169e985be406~mv2.jpeg/v1/fill/w_374,h_280,q_90,enc_avif,quality_auto/da8c02_e2fbbc656bf849a18a60169e985be406~mv2.jpeg",
+      "alt": "",
+      "w": 374,
+      "h": 280
+    },
+    {
+      "src": "https://static.wixstatic.com/media/da8c02_aaa1de2e730543c5b0a42034807ca27c~mv2.jpg/v1/fill/w_373,h_280,q_90,enc_avif,quality_auto/da8c02_aaa1de2e730543c5b0a42034807ca27c~mv2.jpg",
+      "alt": "",
+      "w": 373,
+      "h": 280
+    }
+  ],
+  "colors": [
+    [
+      "rgb(0, 0, 0)",
+      484
+    ],
+    [
+      "rgb(12, 77, 142)",
+      36
+    ],
+    [
+      "rgb(0, 0, 238)",
+      33
+    ],
+    [
+      "rgb(37, 25, 14)",
+      29
+    ],
+    [
+      "rgb(255, 255, 255)",
+      10
+    ],
+    [
+      "rgb(17, 109, 255)",
+      1
+    ],
+    [
+      "rgb(243, 223, 5)",
+      1
+    ]
+  ],
+  "bgs": [
+    [
+      "rgb(255, 255, 255)",
+      9
+    ],
+    [
+      "rgb(232, 232, 232)",
+      6
+    ],
+    [
+      "rgb(12, 77, 142)",
+      3
+    ],
+    [
+      "rgb(37, 25, 14)",
+      1
+    ],
+    [
+      "rgba(255, 255, 255, 0)",
+      1
+    ]
+  ],
+  "fonts": [
+    [
+      "Arial, Helvetica, sans-serif",
+      271
+    ],
+    [
+      "HelveticaNeueW01-45Ligh, HelveticaNeueW02-45Ligh, HelveticaNeueW10-45Ligh, sans-serif",
+      120
+    ],
+    [
+      "helvetica-w01-light, sans-serif",
+      101
+    ],
+    [
+      "Times",
+      80
+    ],
+    [
+      "oswald-medium, oswald, sans-serif",
+      10
+    ],
+    [
+      "georgia, palatino, \"book antiqua\", \"palatino linotype\", serif",
+      10
+    ],
+    [
+      "Helvetica, Arial, メイリオ, meiryo, \"ヒラギノ角ゴ pro w3\", \"hiragino kaku gothic pro\", sans-serif",
+      1
+    ],
+    [
+      "Arial",
+      1
+    ]
+  ],
+  "bodyText": "Skip to Main Content\n\nHome\n\nAbout Us\n\nKesar Mango\n\nMango Pulp\n\nMango Powder\n\nOther Varieties\n\nMore\n\nOur Mango Orchards\n\nLife at The Backyard & Co.\n\nGet in touch with\nany questions\n\nWe' love to have you visit our farms.\n\nAt Village Jhar, Ta: Dhari, District: Amreli - Gujarat. 365630. INDIA\n\nCorporate Address\n\nA4, Park Elegant. Nr. Congress Bhawan,\n\nEllisbridge, Paldi (Ahmedabad ). 380007 - Gujarat- INDIA\n\nContact:  +91 9953607007\n\n+91 8799122486\n\nEmail: info@thebackyardgroup.com\n\nֿPlease fill out the form:\n\nFirst Name\nLast Name\nEmail\nPhone\nAdd a message\nSend\n\nAll Rights Reserved | © 2024 by The Backyard & Co."
+}
