@@ -13,7 +13,7 @@ const NAV = [
   ['contact.html', 'Contact'],
 ];
 
-const WA = 'https://wa.me/919953607007';
+const WA = 'https://wa.me/919213022464';
 
 const waIconHeader = `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M.06 24l1.7-6.2A11.9 11.9 0 1 1 12 24a11.9 11.9 0 0 1-5.7-1.45L.06 24zM6.6 20.1l.37.22a9.9 9.9 0 1 0-3.4-3.42l.24.38-1 3.66 3.8-.84z"/><path d="M9.5 7.3c-.2-.46-.42-.47-.62-.48h-.53c-.18 0-.48.07-.73.35s-.96.94-.96 2.3.98 2.66 1.12 2.85c.14.18 1.92 3.07 4.74 4.18 2.34.92 2.82.74 3.33.7.5-.05 1.64-.67 1.87-1.32.23-.65.23-1.2.16-1.32-.07-.11-.25-.18-.53-.32s-1.64-.81-1.9-.9c-.25-.1-.43-.14-.62.14s-.71.9-.87 1.08c-.16.18-.32.2-.6.07s-1.18-.44-2.25-1.4c-.83-.74-1.4-1.65-1.56-1.93s-.02-.43.12-.57c.13-.13.28-.32.42-.48.14-.16.18-.28.28-.46.09-.18.05-.35-.02-.49S9.7 7.76 9.5 7.3z"/></svg>`;
 
@@ -47,7 +47,7 @@ const FOOTER = `<footer class="site-footer">
       </div>
       <div><h4>Company</h4><a href="about.html">About Us</a><a href="certifications.html">Certifications</a><a href="global-markets.html">Global Markets</a><a href="contact.html">Contact</a></div>
       <div><h4>Export</h4><a href="products.html">Products</a><a href="export-process.html">Export Process</a><a href="packaging.html">Packaging</a><a href="bulk-inquiry.html">Bulk Inquiry</a></div>
-      <div><h4>Get in touch</h4><a href="mailto:exports@mangofarm.com">exports@mangofarm.com</a><a href="tel:+919953607007">+91 99536 07007</a><a href="${WA}" target="_blank" rel="noopener">WhatsApp Sales</a><p style="font-size:.86rem;margin-top:.6rem">Village Jhar, Ta: Dhari, Dist: Amreli,<br>Gujarat 365630, India</p></div>
+      <div><h4>Get in touch</h4><a href="mailto:exports@mangofarm.com">exports@mangofarm.com</a><a href="tel:+919213022464">+91 92130 22464</a><a href="${WA}" target="_blank" rel="noopener">WhatsApp Sales</a><p style="font-size:.86rem;margin-top:.6rem">Village Jhar, Ta: Dhari, Dist: Amreli,<br>Gujarat 365630, India</p></div>
     </div>
     <div class="footer-bottom">
       <span>© <span data-year>2026</span> MANGO FARM. All rights reserved.</span>
@@ -378,7 +378,7 @@ pages['contact.html'] = {
         <p class="lead">Direct lines to our team — no call centres, no delays.</p>
         <div style="margin-top:1.6rem">
           <p><b>Email</b><br><a href="mailto:exports@mangofarm.com" style="color:var(--green)">exports@mangofarm.com</a></p>
-          <p><b>Phone</b><br><a href="tel:+919953607007" style="color:var(--green)">+91 99536 07007</a> · +91 87991 22486</p>
+          <p><b>Phone</b><br><a href="tel:+919213022464" style="color:var(--green)">+91 92130 22464</a></p>
           <p><b>WhatsApp</b><br><a href="${WA}" target="_blank" rel="noopener" style="color:var(--green)">Message us on WhatsApp</a></p>
           <p><b>Pack-house &amp; farms</b><br>Village Jhar, Ta: Dhari, Dist: Amreli, Gujarat 365630, India</p>
           <p><b>Corporate office</b><br>A4, Park Elegant, Nr. Congress Bhawan, Ellisbridge, Paldi, Ahmedabad 380007, Gujarat, India</p>
