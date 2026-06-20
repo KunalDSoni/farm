@@ -1,7 +1,7 @@
 /* Static page generator for the MANGO FARM export site.
    Shares header/footer/floats so every page is consistent. */
 const fs = require('fs');
-const OUT = 'mango-farm-export';
+const OUT = 'docs';
 
 const NAV = [
   ['products.html', 'Products'],
@@ -24,7 +24,7 @@ function header(active) {
   <div class="header-inner">
     <a class="brand" href="index.html" aria-label="MANGO FARM home">
       <span class="brand__mark"><img src="assets/images/mark-green.png" alt=""></span>
-      <span class="brand__name">MANGO FARM<small>EST. 1974 · GIR, INDIA</small></span>
+      <span class="brand__name">MANGO FARM<small>EST. 2026 · TALALA, GIR</small></span>
     </a>
     <nav class="nav" aria-label="Primary">
       ${links}
@@ -43,15 +43,15 @@ const FOOTER = `<footer class="site-footer">
     <div class="footer-grid">
       <div class="footer-brand">
         <a class="brand" href="index.html"><span class="brand__mark"><img src="assets/images/mark-green.png" alt=""></span><span class="brand__name">MANGO FARM</span></a>
-        <p>Premium exporter of GI-tagged Gir Kesar mangoes, aseptic pulp and freeze-dried powder. Family orchards in Gir, Gujarat since 1974.</p>
+        <p>Premium exporter of GI-tagged Gir Kesar mangoes, aseptic pulp and freeze-dried powder. Modern orchards in Talala, Gir since 2026.</p>
       </div>
       <div><h4>Company</h4><a href="about.html">About Us</a><a href="certifications.html">Certifications</a><a href="global-markets.html">Global Markets</a><a href="contact.html">Contact</a></div>
       <div><h4>Export</h4><a href="products.html">Products</a><a href="export-process.html">Export Process</a><a href="packaging.html">Packaging</a><a href="bulk-inquiry.html">Bulk Inquiry</a></div>
-      <div><h4>Get in touch</h4><a href="mailto:exports@mangofarm.com">exports@mangofarm.com</a><a href="tel:+919213022464">+91 92130 22464</a><a href="${WA}" target="_blank" rel="noopener">WhatsApp Sales</a><p style="font-size:.86rem;margin-top:.6rem">Village Jhar, Ta: Dhari, Dist: Amreli,<br>Gujarat 365630, India</p></div>
+      <div><h4>Get in touch</h4><a href="mailto:exports@mangofarm.com">exports@mangofarm.com</a><a href="tel:+919213022464">+91 92130 22464</a><a href="${WA}" target="_blank" rel="noopener">WhatsApp Sales</a><p style="font-size:.86rem;margin-top:.6rem">Talala, Gir, Dist: Junagadh,<br>Gujarat 362150, India</p></div>
     </div>
     <div class="footer-bottom">
       <span>© <span data-year>2026</span> MANGO FARM. All rights reserved.</span>
-      <span>APEDA Registered · FSSAI Compliant · GI-Tagged Gir Kesar</span>
+      <span>Marketed &amp; manufactured by Modern Milk · APEDA Registered · FSSAI Compliant · GI-Tagged Gir Kesar</span>
     </div>
   </div>
 </footer>`;
@@ -117,14 +117,15 @@ const exportInquiryForm = (id) => `<form class="form" data-form id="${id}">
   </div>
   <div class="form-row">
     <div class="field"><label for="${id}-co">Destination country *</label><input id="${id}-co" required></div>
-    <div class="field"><label for="${id}-pr">Product of interest</label>
-      <select id="${id}-pr"><option>Fresh Gir Kesar</option><option>Fresh Alphonso</option><option>Other fresh varieties</option><option>Aseptic mango pulp</option><option>Mango powder</option><option>Multiple / not sure</option></select></div>
+    <div class="field"><label for="${id}-ci">Destination city</label><input id="${id}-ci" placeholder="e.g. Dubai, London"></div>
   </div>
   <div class="form-row">
+    <div class="field"><label for="${id}-pr">Product of interest</label>
+      <select id="${id}-pr"><option>Fresh Gir Kesar</option><option>Fresh Alphonso</option><option>Other fresh varieties</option><option>Aseptic mango pulp</option><option>Mango powder</option><option>Multiple / not sure</option></select></div>
     <div class="field"><label for="${id}-q">Estimated quantity</label><input id="${id}-q" placeholder="e.g. 2 x 40ft reefer / 5 MT"></div>
-    <div class="field"><label for="${id}-i">Preferred incoterm</label>
-      <select id="${id}-i"><option>FOB</option><option>CIF</option><option>CFR</option><option>Not sure</option></select></div>
   </div>
+  <div class="field"><label for="${id}-i">Preferred incoterm</label>
+    <select id="${id}-i"><option>FOB</option><option>CIF</option><option>CFR</option><option>Not sure</option></select></div>
   <div class="field"><label for="${id}-m">Message</label><textarea id="${id}-m" placeholder="Tell us about your market, packaging needs and timelines."></textarea></div>
   <button class="btn btn--gold btn--lg" type="submit" style="width:100%">Send export inquiry</button>
   <p class="form__note">We reply within one business day. Your details are used only to respond to your inquiry.</p>
@@ -138,17 +139,17 @@ const pages = {};
 
 /* ---------- ABOUT ---------- */
 pages['about.html'] = {
-  title: 'About MANGO FARM | Family Mango Orchards in Gir Since 1974',
-  desc: 'MANGO FARM is a family-owned Gir Kesar mango grower and exporter since 1974 — now supplying GI-tagged fruit, pulp and powder to 25+ countries with full APEDA compliance.',
+  title: 'About MANGO FARM | Modern Mango Orchards in Talala, Gir Since 2026',
+  desc: 'MANGO FARM is a modern Gir Kesar mango grower and exporter founded in 2026 in Talala, Gir — supplying GI-tagged fruit, pulp and powder to 10+ countries with full APEDA compliance.',
   active: 'about.html',
-  body: `${pageHero('A family orchard, now a global export house', 'Three generations of Gir Kesar cultivation — combined with modern compliance, packaging and logistics for international buyers.', 'about-banner.jpg', 'About')}
+  body: `${pageHero('A modern orchard, built as a global export house', 'Modern Gir Kesar orchards in Talala — combined with full compliance, packaging and logistics for international buyers.', 'about-banner.jpg', 'About')}
   <section class="section section--cream">
     <div class="container split">
       <div class="split__media" data-reveal><img src="assets/images/gallery-05.jpg" alt="MANGO FARM orchards in Gir"></div>
       <div data-reveal data-delay="1">
         <p class="eyebrow">Who we are</p>
-        <h2 class="h2">Rooted in Gir. Built for export.</h2>
-        <p>MANGO FARM was established in 1974 in the village of Jhar, in the heart of Gir, Gujarat — a region globally recognised for the Kesar mango and its Geographical Indication (GI) tag. What began as family cultivation is today a structured export operation.</p>
+        <h2 class="h2">Rooted in Talala, Gir. Built for export.</h2>
+        <p>MANGO FARM is a modern mango orchard and export house established in 2026 in Talala, in the heart of Gir — the region globally recognised for the Kesar mango and its Geographical Indication (GI) tag. We were built from day one as a structured, compliance-first export operation.</p>
         <p>We grow and source exclusively from the Gir belt, then grade, process, pack and ship to importers, distributors, retail chains and food manufacturers worldwide — with documentation and quality control at every step.</p>
       </div>
     </div>
@@ -156,10 +157,10 @@ pages['about.html'] = {
   <section class="section section--green">
     <div class="container">
       <div class="stats">
-        <div class="stat"><b data-count="50" data-suffix="+">0</b><span>Years of Farming</span></div>
-        <div class="stat"><b data-count="25" data-suffix="+">0</b><span>Export Markets</span></div>
+        <div class="stat"><b data-count="250" data-suffix="+">0</b><span>Acres Under Orchard</span></div>
+        <div class="stat"><b data-count="10" data-suffix="+">0</b><span>Export Markets</span></div>
         <div class="stat"><b data-count="1200" data-suffix="+">0</b><span>MT Annual Capacity</span></div>
-        <div class="stat"><b data-count="3">0</b><span>Generations</span></div>
+        <div class="stat"><b data-count="4">0</b><span>GI Varieties</span></div>
       </div>
     </div>
   </section>
@@ -173,13 +174,33 @@ pages['about.html'] = {
       </div>
     </div>
   </section>
+  <section class="section section--cream">
+    <div class="container">
+      <div class="section-head section-head--center" data-reveal><p class="eyebrow eyebrow--center">Our varieties</p><h2 class="h2">The stories behind our mangoes</h2></div>
+      <div class="grid grid-3">
+        <div class="feature-card" data-reveal><h3>Gir Kesar — Talala, Gir</h3><p>Grown in the GI-recognised Talala belt of Gir, our flagship Kesar is saffron-coloured, intensely aromatic and fibre-free — the benchmark for premium Indian mangoes and the heart of everything we ship.</p></div>
+        <div class="feature-card" data-reveal data-delay="1"><h3>Alphonso — the King of Mangoes</h3><p>Sourced through vetted partner orchards, Alphonso brings its rich, creamy texture and signature fragrance — a globally sought-after GI variety we offer alongside our Kesar for buyers wanting India's finest.</p></div>
+        <div class="feature-card" data-reveal data-delay="2"><h3>Other GI-tagged varieties</h3><p>Beyond Kesar and Alphonso, we supply select GI specialties — Dashehari, Bhagalpuri Zardalu and Laxman Bhog — each tied to its own region and protected origin, graded to the same export standard.</p></div>
+      </div>
+    </div>
+  </section>
   <section class="section section--cream2">
     <div class="container narrow">
       <div class="section-head section-head--center" data-reveal><p class="eyebrow eyebrow--center">Our journey</p><h2 class="h2">From orchard to global markets</h2></div>
       <div data-reveal>
-        ${[['1974','Family mango orchards established in Jhar, Gir.'],['2000s','Cultivation scaled through trusted grower partnerships across the Gir belt.'],['2018','APEDA registration and first international export shipments.'],['2021','Aseptic pulp and freeze-dried powder added to the export range.'],['Today','Supplying GI-tagged Kesar, pulp and powder to 25+ countries.']].map(([y,t])=>`<div style="display:grid;grid-template-columns:120px 1fr;gap:1.4rem;padding:1.2rem 0;border-bottom:1px solid var(--line)"><b style="font-family:var(--display);font-size:1.4rem;color:var(--green-800)">${y}</b><p style="margin:0;color:var(--muted)">${t}</p></div>`).join('')}
+        ${[['2026','Modern mango orchards established in Talala, Gir.'],['Sourcing','Grower partnerships built across the Gir belt for Kesar and select GI varieties.'],['Export-ready','APEDA registration and first international export shipments.'],['Processed range','Aseptic pulp and freeze-dried powder added to the export range.'],['Today','Supplying GI-tagged Kesar, pulp and powder to 10+ countries.']].map(([y,t])=>`<div style="display:grid;grid-template-columns:160px 1fr;gap:1.4rem;padding:1.2rem 0;border-bottom:1px solid var(--line)"><b style="font-family:var(--display);font-size:1.4rem;color:var(--green-800)">${y}</b><p style="margin:0;color:var(--muted)">${t}</p></div>`).join('')}
       </div>
       <div class="center mt-3" data-reveal><a class="btn btn--gold" href="bulk-inquiry.html">Partner with us</a></div>
+    </div>
+  </section>
+  <section class="section section--green">
+    <div class="container">
+      <div class="section-head section-head--center" data-reveal><p class="eyebrow eyebrow--center" style="color:var(--gold)">In India</p><h2 class="h2" style="color:#fff">Our domestic presence</h2><p class="lead" style="color:rgba(255,255,255,.8)">Beyond exports, we serve the Indian market through our corporate base in Ahmedabad and distribution into major metro cities.</p></div>
+      <div class="grid grid-3">
+        <div data-reveal><h3 style="color:#fff">Ahmedabad</h3><p style="color:rgba(255,255,255,.78)">Corporate office and domestic sales hub, coordinating supply across Gujarat and beyond.</p></div>
+        <div data-reveal data-delay="1"><h3 style="color:#fff">Mumbai</h3><p style="color:rgba(255,255,255,.78)">Metro distribution for fresh fruit, pulp and powder to retailers, HoReCa and processors.</p></div>
+        <div data-reveal data-delay="2"><h3 style="color:#fff">Metro cities</h3><p style="color:rgba(255,255,255,.78)">Growing presence across India's major metros, including modern retail and e-commerce channels.</p></div>
+      </div>
     </div>
   </section>`
 };
@@ -192,7 +213,7 @@ const productBlock = (img, tag, name, desc, specs, reverse) => `<div class="spli
       <h2 class="h2">${name}</h2>
       <p>${desc}</p>
       <ul style="list-style:none;padding:0;margin:1rem 0 1.4rem">${specs.map(s=>`<li style="display:flex;gap:.6rem;padding:.4rem 0;border-bottom:1px solid var(--line)"><span class="text-gold">✓</span> ${s}</li>`).join('')}</ul>
-      <a class="btn btn--outline" href="bulk-inquiry.html">Request quote / sample</a>
+      <a class="btn btn--outline" href="bulk-inquiry.html">Request a quote</a>
     </div>
   </div>`;
 pages['products.html'] = {
@@ -211,9 +232,9 @@ pages['products.html'] = {
   </section>
   <section class="section section--green">
     <div class="container narrow center" data-reveal>
-      <h2 class="h2">Need specifications or a sample?</h2>
+      <h2 class="h2">Need specifications?</h2>
       <p class="lead">Share your market and volume — we'll send grade sheets, packing options and a certificate of analysis.</p>
-      <div class="cta-band__btns" style="margin-top:1.4rem"><a class="btn btn--gold btn--lg" href="bulk-inquiry.html">Request a sample</a><a class="btn btn--ghost-light btn--lg" href="${WA}" target="_blank" rel="noopener">WhatsApp us</a></div>
+      <div class="cta-band__btns" style="margin-top:1.4rem"><a class="btn btn--gold btn--lg" href="bulk-inquiry.html">Request specifications</a><a class="btn btn--ghost-light btn--lg" href="${WA}" target="_blank" rel="noopener">WhatsApp us</a></div>
     </div>
   </section>`
 };
@@ -271,16 +292,16 @@ pages['export-process.html'] = {
     <div class="container">
       ${stepRow('01','Sourcing &amp; grading','Fruit is hand-picked at optimal maturity from GI-tagged Gir orchards, then graded by size, weight, brix and appearance to a consistent export specification.','gallery-01.jpg',false)}
       ${stepRow('02','Quality control &amp; compliance','Residue testing, hot-water treatment and phytosanitary handling, with APEDA documentation prepared for the destination market.','gallery-13.jpg',true)}
-      ${stepRow('03','Packaging &amp; cold chain','Pre-cooling, packing to market specification and controlled-atmosphere storage preserve firmness and shelf life before dispatch.','pulp-1.png',false)}
+      <!-- TODO: replace step-03 image (pulp-1.png) with a new box-packing/dispatch photo -->
+      ${stepRow('03','Box packing &amp; dispatch','Pre-cooling, box packing to market specification and controlled-atmosphere storage preserve firmness and shelf life, with consignments dispatched to schedule.','pulp-1.png',false)}
       ${stepRow('04','Logistics &amp; documentation','Reefer container or air-freight loading with full export documentation — shipped on FOB or CIF terms with live status updates.','gallery-10.jpg',true)}
     </div>
   </section>
   <section class="section section--green">
     <div class="container">
-      <div class="grid grid-3">
-        <div data-reveal><h3 style="color:#fff">Incoterms</h3><p style="color:rgba(255,255,255,.78)">FOB and CIF via Mundra, Nhava Sheva and Pipavav ports; air freight for premium fresh consignments.</p></div>
-        <div data-reveal data-delay="1"><h3 style="color:#fff">Lead times</h3><p style="color:rgba(255,255,255,.78)">Fresh fruit dispatched within days of harvest; pulp and powder available for year-round scheduling.</p></div>
-        <div data-reveal data-delay="2"><h3 style="color:#fff">Payment</h3><p style="color:rgba(255,255,255,.78)">Advance &amp; balance against documents or L/C — confirmed per order and market.</p></div>
+      <div class="grid grid-2">
+        <div data-reveal><h3 style="color:#fff">Lead times</h3><p style="color:rgba(255,255,255,.78)">Fresh fruit dispatched within days of harvest; pulp and powder available for year-round scheduling.</p></div>
+        <div data-reveal data-delay="1"><h3 style="color:#fff">Payment</h3><p style="color:rgba(255,255,255,.78)">Advance &amp; balance against documents or L/C — confirmed per order and market.</p></div>
       </div>
       <div class="center mt-3" data-reveal><a class="btn btn--gold btn--lg" href="bulk-inquiry.html">Start an export inquiry</a></div>
     </div>
@@ -300,6 +321,17 @@ pages['packaging.html'] = {
         <div class="feature-card" data-reveal><h3>Fresh fruit</h3><p>Ventilated corrugated cartons in 4 kg retail and bulk formats, with protective trays and liners for long-haul integrity.</p></div>
         <div class="feature-card" data-reveal data-delay="1"><h3>Aseptic pulp</h3><p>Food-processing-grade aseptic cans and 215 kg drums for beverage, dairy and bakery manufacturers.</p></div>
         <div class="feature-card" data-reveal data-delay="2"><h3>Mango powder</h3><p>Resealable, high-barrier pouches and bulk packs that protect aroma and shelf life.</p></div>
+      </div>
+      <div class="section-head mt-3" data-reveal style="margin-top:4rem"><p class="eyebrow">Harvest &amp; box formats</p><h2 class="h2">Grades and pack sizes</h2></div>
+      <div class="grid grid-2">
+        <div class="feature-card" data-reveal><h3>Regular harvest</h3><p>Dependable, export-grade Kesar for volume buyers — consistent grading and value-led pricing for retail and wholesale programmes.</p></div>
+        <div class="feature-card" data-reveal data-delay="1"><h3>Premium harvest</h3><p>Hand-selected, top-grade fruit picked at peak maturity for premium retail, gifting and high-end food service.</p></div>
+      </div>
+      <div class="grid grid-4" style="margin-top:1.4rem">
+        <div class="feature-card" data-reveal><h3>3 kg box</h3><p>Retail-ready carton for premium counters and direct gifting.</p></div>
+        <div class="feature-card" data-reveal data-delay="1"><h3>5 kg box</h3><p>Versatile pack for retail and food service.</p></div>
+        <div class="feature-card" data-reveal data-delay="2"><h3>10 kg box</h3><p>Bulk format for wholesale and distribution.</p></div>
+        <div class="feature-card" data-reveal data-delay="3"><h3>Dozen boxes</h3><p>Count-based dozen packs in different packaging styles to suit each market.</p></div>
       </div>
       <div class="section-head mt-3" data-reveal style="margin-top:4rem"><p class="eyebrow">Gallery</p><h2 class="h2">Packaging gallery</h2></div>
       <div class="pack-grid" data-reveal>
@@ -324,10 +356,10 @@ pages['packaging.html'] = {
 /* ---------- GLOBAL MARKETS ---------- */
 const regionCard = (title, countries) => `<div class="feature-card" data-reveal><h3>${title}</h3><div class="country-chips" style="margin-top:.6rem">${countries.map(c=>`<span class="chip" style="background:var(--cream-200);border-color:var(--line)">${c}</span>`).join('')}</div></div>`;
 pages['global-markets.html'] = {
-  title: 'Global Markets | Mango Export to 25+ Countries | MANGO FARM',
-  desc: 'MANGO FARM exports Gir Kesar mangoes, pulp and powder to 25+ countries across the Middle East, Europe, North America and Asia-Pacific via major Indian ports.',
+  title: 'Global Markets | Mango Export to 10+ Countries | MANGO FARM',
+  desc: 'MANGO FARM exports Gir Kesar mangoes, pulp and powder to 10+ countries across the Middle East, Europe, North America and Asia-Pacific via major Indian ports.',
   active: 'global-markets.html',
-  body: `${pageHero('Trusted across 25+ countries', 'From the Gulf to Europe, North America and Asia-Pacific — reliable supply to importers, distributors and retail chains.', 'hero-banner.jpg', 'Global Markets')}
+  body: `${pageHero('Trusted across 10+ countries', 'From the Gulf to Europe, North America and Asia-Pacific — reliable supply to importers, distributors and retail chains.', 'hero-banner.jpg', 'Global Markets')}
   <section class="section section--dark">
     <div class="container">
       <div class="markets">
@@ -335,14 +367,14 @@ pages['global-markets.html'] = {
           <p class="eyebrow">Where we ship</p>
           <h2 class="h2">A worldwide buyer network</h2>
           <p class="lead">We serve established importers and new partners alike, shipping via Mundra, Nhava Sheva and Pipavav with reefer and air-freight options.</p>
-          <div class="country-chips">${['🇦🇪 UAE','🇸🇦 Saudi Arabia','🇶🇦 Qatar','🇰🇼 Kuwait','🇧🇭 Bahrain','🇴🇲 Oman','🇬🇧 UK','🇩🇪 Germany','🇳🇱 Netherlands','🇺🇸 USA','🇨🇦 Canada','🇸🇬 Singapore','🇲🇾 Malaysia','🇳🇿 New Zealand','+ more'].map(c=>`<span class="chip">${c}</span>`).join('')}</div>
+          <div class="country-chips">${['🇦🇪 UAE','🇸🇦 Saudi Arabia','🇶🇦 Qatar','🇰🇼 Kuwait','🇬🇧 UK','🇩🇪 Germany','🇺🇸 USA','🇨🇦 Canada','🇸🇬 Singapore','🇳🇿 New Zealand','+ more'].map(c=>`<span class="chip">${c}</span>`).join('')}</div>
         </div>
         <div class="map-wrap" data-reveal data-delay="1" aria-hidden="true">
           <svg viewBox="0 0 200 200"><circle cx="100" cy="100" r="92" fill="none" stroke="rgba(255,255,255,.15)"/><ellipse cx="100" cy="100" rx="92" ry="34" fill="none" stroke="rgba(255,255,255,.12)"/><ellipse cx="100" cy="100" rx="92" ry="68" fill="none" stroke="rgba(255,255,255,.12)"/><ellipse cx="100" cy="100" rx="40" ry="92" fill="none" stroke="rgba(255,255,255,.12)"/><ellipse cx="100" cy="100" rx="72" ry="92" fill="none" stroke="rgba(255,255,255,.12)"/><line x1="8" y1="100" x2="192" y2="100" stroke="rgba(255,255,255,.12)"/><line x1="100" y1="8" x2="100" y2="192" stroke="rgba(255,255,255,.12)"/><circle class="map-dot" cx="120" cy="108" r="4"/><circle class="map-dot" cx="135" cy="96" r="3.5" style="animation-delay:.4s"/><circle class="map-dot" cx="92" cy="78" r="3.5" style="animation-delay:.8s"/><circle class="map-dot" cx="70" cy="92" r="3.5" style="animation-delay:1.2s"/><circle class="map-dot" cx="150" cy="120" r="3.5" style="animation-delay:1.6s"/></svg>
         </div>
       </div>
       <div class="stats mt-3" style="margin-top:4rem" data-reveal>
-        <div class="stat"><b data-count="25" data-suffix="+">0</b><span>Countries Served</span></div>
+        <div class="stat"><b data-count="10" data-suffix="+">0</b><span>Countries Served</span></div>
         <div class="stat"><b data-count="4">0</b><span>Continents</span></div>
         <div class="stat"><b data-count="3">0</b><span>Export Ports</span></div>
         <div class="stat"><b data-count="100" data-suffix="%">0</b><span>Traceable Lots</span></div>
@@ -353,10 +385,10 @@ pages['global-markets.html'] = {
     <div class="container">
       <div class="section-head section-head--center" data-reveal><p class="eyebrow eyebrow--center">By region</p><h2 class="h2">Markets we serve</h2></div>
       <div class="grid grid-4">
-        ${regionCard('Middle East',['UAE','Saudi Arabia','Qatar','Kuwait','Bahrain','Oman'])}
-        ${regionCard('Europe',['UK','Germany','Netherlands','France'])}
+        ${regionCard('Middle East',['UAE','Saudi Arabia','Qatar','Kuwait'])}
+        ${regionCard('Europe',['UK','Germany'])}
         ${regionCard('North America',['USA','Canada'])}
-        ${regionCard('Asia-Pacific',['Singapore','Malaysia','New Zealand'])}
+        ${regionCard('Asia-Pacific',['Singapore','New Zealand'])}
       </div>
       <div class="center mt-3" data-reveal><a class="btn btn--gold" href="bulk-inquiry.html">Enquire for your market</a></div>
     </div>
@@ -374,16 +406,28 @@ pages['contact.html'] = {
     <div class="container split">
       <div data-reveal>
         <p class="eyebrow">Get in touch</p>
-        <h2 class="h2">Export sales &amp; inquiries</h2>
+        <h2 class="h2">Export &amp; domestic inquiries</h2>
         <p class="lead">Direct lines to our team — no call centres, no delays.</p>
         <div style="margin-top:1.6rem">
+          <h3 class="h3" style="font-size:1.1rem;margin-bottom:.4rem">Export detail</h3>
           <p><b>Email</b><br><a href="mailto:exports@mangofarm.com" style="color:var(--green)">exports@mangofarm.com</a></p>
-          <p><b>Phone</b><br><a href="tel:+919213022464" style="color:var(--green)">+91 92130 22464</a></p>
-          <p><b>WhatsApp</b><br><a href="${WA}" target="_blank" rel="noopener" style="color:var(--green)">Message us on WhatsApp</a></p>
-          <p><b>Pack-house &amp; farms</b><br>Village Jhar, Ta: Dhari, Dist: Amreli, Gujarat 365630, India</p>
-          <p><b>Corporate office</b><br>A4, Park Elegant, Nr. Congress Bhawan, Ellisbridge, Paldi, Ahmedabad 380007, Gujarat, India</p>
+          <p><b>Phone / WhatsApp</b><br><a href="tel:+919213022464" style="color:var(--green)">+91 92130 22464</a></p>
+          <p><b>Pack-house &amp; farms</b><br>Talala, Gir, Dist: Junagadh, Gujarat 362150, India</p>
+          <p><b>Ports &amp; terms</b><br>FOB / CIF via Mundra, Nhava Sheva &amp; Pipavav</p>
         </div>
-        <div class="cta-band__btns" style="justify-content:flex-start;margin-top:1rem"><a class="btn btn--wa" href="${WA}" target="_blank" rel="noopener">WhatsApp Sales</a><a class="btn btn--outline" href="assets/docs/mango-farm-export-brochure.pdf" download>Download brochure</a></div>
+        <div style="margin-top:1.6rem">
+          <h3 class="h3" style="font-size:1.1rem;margin-bottom:.4rem">Domestic detail</h3>
+          <p><b>Corporate office</b><br>A4, Park Elegant, Nr. Congress Bhawan, Ellisbridge, Paldi, Ahmedabad 380007, Gujarat, India</p>
+          <p><b>Cities served</b><br>Ahmedabad, Mumbai &amp; major metro cities</p>
+          <p><b>E-Commerce</b><br>Available on leading online marketplaces</p>
+          <p><b>Marketed &amp; manufactured by</b><br>Modern Milk</p>
+        </div>
+        <div style="margin-top:1.6rem">
+          <h3 class="h3" style="font-size:1.1rem;margin-bottom:.4rem">Connect with us</h3>
+          <!-- TODO: add scannable WhatsApp & Instagram QR images here (e.g. assets/images/qr-whatsapp.png, assets/images/qr-instagram.png) -->
+          <div class="cta-band__btns" style="justify-content:flex-start;margin-top:.4rem"><a class="btn btn--wa" href="${WA}" target="_blank" rel="noopener">WhatsApp</a><a class="btn btn--outline" href="https://instagram.com/" target="_blank" rel="noopener">Instagram</a></div>
+        </div>
+        <div class="cta-band__btns" style="justify-content:flex-start;margin-top:1rem"><a class="btn btn--outline" href="assets/docs/mango-farm-export-brochure.pdf" download>Download brochure</a></div>
       </div>
       <div data-reveal data-delay="1">
         <h3 class="h3" style="margin-bottom:1rem">Send an inquiry</h3>
