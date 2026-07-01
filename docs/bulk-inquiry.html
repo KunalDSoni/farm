@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self'; connect-src 'self'; form-action 'self'; upgrade-insecure-requests">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self'; connect-src 'self' https://formsubmit.co; form-action 'self' https://formsubmit.co; upgrade-insecure-requests">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <script>document.documentElement.className+=' js'</script>
   <title>Bulk & Export Inquiry | Request a Mango Quote | MODERN HARVEST</title>
@@ -28,11 +28,11 @@
       <span class="brand__name">MODERN HARVEST</span>
     </a>
     <nav class="nav" aria-label="Primary">
-      <a href="products">Products</a>
+      <a href="products">Mangoes</a><a href="fresh-dates">Dates</a>
       <a href="certifications">Certifications</a>
-      <a href="export-process">Export Process</a>
+      <a href="export-process">Export</a>
       <a href="packaging">Packaging</a>
-      <a href="global-markets">Global Markets</a>
+      <a href="global-markets">Global</a>
       <a href="about">About</a>
       <a href="contact">Contact</a>
     </nav>
@@ -64,27 +64,33 @@
       </div>
       <div data-reveal data-delay="1">
         <h3 class="h3" style="margin-bottom:1rem">Export &amp; bulk inquiry</h3>
-        <form class="form" data-form id="bulk">
+        <!-- Submits via FormSubmit (AJAX) - inquiries are emailed to meet.dhaduk@modernsmilk.com.
+             NOTE: on the first real submission, that inbox must click a one-time confirmation link. -->
+        <form class="form" data-form data-endpoint="https://formsubmit.co/ajax/meet.dhaduk@modernsmilk.com" id="bulk">
+  <!-- FormSubmit config + spam honeypot -->
+  <input type="hidden" name="_subject" value="New Bulk / Export Inquiry - Modern Harvest">
+  <input type="hidden" name="_template" value="table">
+  <input type="text" name="_honey" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true">
   <div class="form-row">
-    <div class="field"><label for="bulk-n">Full name *</label><input id="bulk-n" required></div>
-    <div class="field"><label for="bulk-c">Company *</label><input id="bulk-c" required></div>
+    <div class="field"><label for="bulk-n">Full name *</label><input id="bulk-n" name="Name" required></div>
+    <div class="field"><label for="bulk-c">Company *</label><input id="bulk-c" name="Company" required></div>
   </div>
   <div class="form-row">
-    <div class="field"><label for="bulk-e">Work email *</label><input id="bulk-e" type="email" required></div>
-    <div class="field"><label for="bulk-p">Phone / WhatsApp</label><input id="bulk-p" type="tel"></div>
+    <div class="field"><label for="bulk-e">Work email *</label><input id="bulk-e" name="email" type="email" required></div>
+    <div class="field"><label for="bulk-p">Phone / WhatsApp</label><input id="bulk-p" name="Phone" type="tel"></div>
   </div>
   <div class="form-row">
-    <div class="field"><label for="bulk-co">Destination country *</label><input id="bulk-co" required></div>
-    <div class="field"><label for="bulk-ci">Destination city</label><input id="bulk-ci" placeholder="e.g. Dubai, London"></div>
+    <div class="field"><label for="bulk-co">Destination country *</label><input id="bulk-co" name="Destination country" required></div>
+    <div class="field"><label for="bulk-ci">Destination city</label><input id="bulk-ci" name="Destination city" placeholder="e.g. Dubai, London"></div>
   </div>
   <div class="form-row">
     <div class="field"><label for="bulk-pr">Product of interest</label>
-      <select id="bulk-pr"><option>Fresh Gir Kesar</option><option>Fresh Alphonso</option><option>Other fresh varieties</option><option>Aseptic mango pulp</option><option>Mango powder</option><option>Multiple / not sure</option></select></div>
-    <div class="field"><label for="bulk-q">Estimated quantity</label><input id="bulk-q" placeholder="e.g. 2 x 40ft reefer / 5 MT"></div>
+      <select id="bulk-pr" name="Product of interest"><option>Fresh Gir Kesar</option><option>Fresh Alphonso</option><option>Other fresh varieties</option><option>Fresh Kutch GI Tagged Dates</option><option>Aseptic mango pulp</option><option>Mango powder</option><option>Multiple / not sure</option></select></div>
+    <div class="field"><label for="bulk-q">Estimated quantity</label><input id="bulk-q" name="Estimated quantity" placeholder="e.g. 2 x 40ft reefer / 5 MT"></div>
   </div>
   <div class="field"><label for="bulk-i">Preferred incoterm</label>
-    <select id="bulk-i"><option>FOB</option><option>CIF</option><option>CFR</option><option>Not sure</option></select></div>
-  <div class="field"><label for="bulk-m">Message</label><textarea id="bulk-m" placeholder="Tell us about your market, packaging needs and timelines."></textarea></div>
+    <select id="bulk-i" name="Preferred incoterm"><option>FOB</option><option>CIF</option><option>CFR</option><option>Not sure</option></select></div>
+  <div class="field"><label for="bulk-m">Message</label><textarea id="bulk-m" name="Message" placeholder="Tell us about your market, packaging needs and timelines."></textarea></div>
   <button class="btn btn--gold btn--lg" type="submit" style="width:100%">Send export inquiry</button>
   <p class="form__note">We reply within one business day. Your details are used only to respond to your inquiry.</p>
   <div class="form__ok">Thank you - your inquiry has been received. Our export team will contact you within one business day.</div>
@@ -100,9 +106,9 @@
         <a class="brand" href="./"><span class="brand__mark"><img src="assets/images/mark-green.png" alt=""></span><span class="brand__name">MODERN HARVEST</span></a>
         <p>Premium exporter of GI-tagged Gir Kesar mangoes, aseptic pulp and freeze-dried powder. Modern orchards in Talala, Gir since 2026.</p>
       </div>
-      <div><h4>Company</h4><a href="about">About Us</a><a href="certifications">Certifications</a><a href="global-markets">Global Markets</a><a href="contact">Contact</a></div>
-      <div><h4>Export</h4><a href="products">Products</a><a href="export-process">Export Process</a><a href="packaging">Packaging</a><a href="bulk-inquiry">Bulk Inquiry</a></div>
-      <div><h4>Get in touch</h4><a href="mailto:exports@mangofarm.com">exports@mangofarm.com</a><a href="tel:+919213022464">+91 92130 22464</a><a href="https://wa.me/919213022464" target="_blank" rel="noopener">WhatsApp Sales</a><p style="font-size:.86rem;margin-top:.6rem">Talala, Gir, Dist: Junagadh,<br>Gujarat 362150, India</p></div>
+      <div><h4>Company</h4><a href="about">About Us</a><a href="certifications">Certifications</a><a href="global-markets">Global</a><a href="contact">Contact</a></div>
+      <div><h4>Export</h4><a href="products">Mangoes</a><a href="fresh-dates">Dates</a><a href="export-process">Export</a><a href="packaging">Packaging</a><a href="bulk-inquiry">Bulk Inquiry</a></div>
+      <div><h4>Get in touch</h4><a href="mailto:meet.dhaduk@modernsmilk.com">meet.dhaduk@modernsmilk.com</a><a href="tel:+919213022464">+91 92130 22464</a><a href="https://wa.me/919213022464" target="_blank" rel="noopener">WhatsApp Sales</a><p style="font-size:.86rem;margin-top:.6rem">Talala, Gir, Dist: Junagadh,<br>Gujarat 362150, India</p></div>
     </div>
     <div class="footer-bottom">
       <span>© <span data-year>2026</span> MODERN HARVEST. All rights reserved.</span>

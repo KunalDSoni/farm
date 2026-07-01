@@ -82,17 +82,47 @@
     });
   });
 
-  /* forms (front-end demo) */
+  /* forms: real delivery via data-endpoint (FormSubmit AJAX), else front-end demo */
+  function lockForm(form) {
+    var ok = form.querySelector('.form__ok');
+    if (ok) ok.classList.add('show');
+    form.querySelectorAll('input,select,textarea').forEach(function (f) {
+      if (f.type !== 'submit') f.disabled = true;
+    });
+    var btn = form.querySelector('button[type="submit"]');
+    if (btn) { btn.textContent = 'Received ✓'; btn.disabled = true; }
+  }
   document.querySelectorAll('form[data-form]').forEach(function (form) {
     form.addEventListener('submit', function (e) {
       e.preventDefault();
-      var ok = form.querySelector('.form__ok');
-      if (ok) ok.classList.add('show');
-      form.querySelectorAll('input,select,textarea').forEach(function (f) {
-        if (f.type !== 'submit') f.disabled = true;
-      });
+      var endpoint = form.getAttribute('data-endpoint');
+      if (!endpoint) { lockForm(form); return; } // demo forms (no backend configured)
+
       var btn = form.querySelector('button[type="submit"]');
-      if (btn) { btn.textContent = 'Received ✓'; btn.disabled = true; }
+      var label = btn ? btn.textContent : '';
+      if (btn) { btn.disabled = true; btn.textContent = 'Sending...'; }
+
+      fetch(endpoint, {
+        method: 'POST',
+        headers: { 'Accept': 'application/json' },
+        body: new FormData(form)
+      })
+        .then(function (r) { return r.json().catch(function () { return {}; }).then(function (d) { return { ok: r.ok, d: d }; }); })
+        .then(function (res) {
+          if (res.ok && (res.d.success === 'true' || res.d.success === true)) {
+            lockForm(form);
+          } else {
+            throw new Error((res.d && res.d.message) || 'send failed');
+          }
+        })
+        .catch(function () {
+          if (btn) { btn.disabled = false; btn.textContent = label; }
+          var note = form.querySelector('.form__note');
+          if (note) {
+            note.style.color = '#b3261e';
+            note.textContent = "Sorry, we couldn't send that. Please WhatsApp us at +91 92130 22464 or email meet.dhaduk@modernsmilk.com.";
+          }
+        });
     });
   });
 
