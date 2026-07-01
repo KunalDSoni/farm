@@ -350,7 +350,7 @@ p{margin:0 0 1.1rem}
 .produce-card__cta .btn{flex:1;padding:.7rem 1rem;font-size:.9rem}
 
 /* GI seal emblem */
-.gi-seal{width:min(300px,78%);height:auto;margin-inline:auto;display:block;filter:drop-shadow(var(--shadow))}
+.gi-seal{width:min(320px,80%);height:auto;aspect-ratio:1;margin-inline:auto;display:block;border-radius:50%;object-fit:cover;filter:drop-shadow(var(--shadow))}
 
 @media(max-width:1024px){.produce-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:560px){.produce-grid{grid-template-columns:1fr}}
