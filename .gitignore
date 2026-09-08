@@ -4,3 +4,6 @@ original/shots/
 build-shots/
 export-shots/
 build-shots/
+
+.next/
+tsconfig.tsbuildinfo

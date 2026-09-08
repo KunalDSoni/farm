@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-white text-ink;
+    font-feature-settings: "ss01" on, "cv01" on;
+  }
+
+  /* The template sets headings at weight 500, never 700 */
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-weight: 500;
+    text-wrap: balance;
+  }
+
+  section {
+    scroll-margin-top: 96px;
+  }
+
+  ::selection {
+    @apply bg-brand text-white;
+  }
+}
+
+@layer components {
+  .shell {
+    @apply mx-auto w-full max-w-shell px-6 lg:px-10;
+  }
+
+  /*
+   * Scroll-reveal: visible by default so no-JS / crawlers still see content.
+   * Uses the independent `translate` property rather than `transform` so it
+   * composes with Tailwind's rotate/scale utilities instead of clobbering them.
+   */
+  .reveal {
+    opacity: 1;
+  }
+  .js .reveal {
+    opacity: 0;
+    translate: 0 24px;
+    transition: opacity 0.7s cubic-bezier(0.22, 0.61, 0.36, 1),
+      translate 0.7s cubic-bezier(0.22, 0.61, 0.36, 1);
+  }
+  .js .reveal.is-in {
+    opacity: 1;
+    translate: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .js .reveal {
+    opacity: 1;
+    translate: none;
+    transition: none;
+  }
+  .animate-marquee {
+    animation: none;
+  }
+}
