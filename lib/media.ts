@@ -28,6 +28,8 @@ export const media = {
   bannerTeam: m("NHQgmqW1RcoerG9Ey35pw7Ik9LU.jpg"),
   bannerAbout: m("HTCxbtzQLbckykWOh7EGkWRnSB0.jpg"),
   bannerBlog: m("612wNVfu30qJ0wlB8BXE0oj8dI.jpg"),
+  bannerFaq: m("WHGzkc8lDGldjUMhoD6UhaAnlHE.jpg"),
+  bannerPricing: m("ugZkAwezwEFvaVvqOdHcnbt4Fk4.jpg"),
   bannerWide: m("xlc0DOt5Dx6MjEsLkGfLdLxr9gI.jpg"),
   fieldWide: m("xhSsrYi10FiNV46Znp9A2Dr64.jpg"),
   fieldTall: m("dL8Nv4bDpfqS2psbogXQHOJvcB4.jpeg"),

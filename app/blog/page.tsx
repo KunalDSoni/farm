@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { CTABand, PageHeader } from "@/components/sections";
+import { CTABand, SplitHeader } from "@/components/sections";
 import { media } from "@/lib/media";
 import { posts } from "@/lib/content";
 
@@ -16,17 +16,18 @@ const fmt = (iso: string) =>
 export default function Blog() {
   return (
     <>
-      <PageHeader
+      <SplitHeader
         eyebrow="Blog"
-        title="Field notes."
+        title="Discover the future of farming."
         body="What we are learning across soil, water, climate, and the long road from field to port."
         image={media.bannerBlog}
+        imageAlt="A farmer walking through a young crop"
       />
 
       <section className="shell py-20 lg:py-28">
-        <div className="reveal grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
+        <div data-reveal-group className="grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
           {posts.map((p) => (
-            <article key={p.slug}>
+            <article key={p.slug} data-reveal>
               <Link href="/blog" className="group block">
                 <div className="relative aspect-[413/220] overflow-hidden rounded-card">
                   <Image

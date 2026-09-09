@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { CTABand, PageHeader } from "@/components/sections";
+import { BannerHeader, CTABand } from "@/components/sections";
 import { Button } from "@/components/ui";
 import { media } from "@/lib/media";
 import { team } from "@/lib/content";
@@ -16,15 +16,16 @@ export default function OurTeam() {
 
   return (
     <>
-      <PageHeader
+      <BannerHeader
         eyebrow="Our team"
-        title="The people behind the harvest."
-        body="Agronomists, operators, and partnership leads who spend more time in fields than in meeting rooms."
+        title="Rooted in purpose. Driven by passion."
+        body="We bring together a diverse team of experts and innovators united in our mission to create a smarter, sustainable future for agriculture."
         image={media.bannerTeam}
+        imageAlt="Rows of crops running toward distant hills"
       />
 
       <section className="shell py-20 lg:py-28">
-        <div className="reveal grid overflow-hidden rounded-card lg:grid-cols-[minmax(0,530px)_minmax(0,1fr)]">
+        <div data-reveal className="grid overflow-hidden rounded-card lg:grid-cols-[minmax(0,530px)_minmax(0,1fr)]">
           <div className="relative min-h-[380px]">
             <Image
               src={media.founder}
@@ -56,9 +57,9 @@ export default function OurTeam() {
       </section>
 
       <section className="shell pb-20 lg:pb-28">
-        <div className="reveal grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
+        <div data-reveal-group className="grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
           {rest.map((m) => (
-            <article key={m.name}>
+            <article key={m.name} data-reveal>
               <div className="relative aspect-[298/350] overflow-hidden rounded-card">
                 <Image
                   src={m.image}

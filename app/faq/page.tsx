@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
-import Accordion from "@/components/Accordion";
-import { CTABand, PageHeader } from "@/components/sections";
-import { Button } from "@/components/ui";
+import FaqGrid from "@/components/FaqGrid";
+import { CTABand, SplitHeader } from "@/components/sections";
 import { media } from "@/lib/media";
 import { faqs } from "@/lib/content";
 
@@ -13,26 +12,17 @@ export const metadata: Metadata = {
 export default function FAQ() {
   return (
     <>
-      <PageHeader
+      <SplitHeader
         eyebrow="FAQ"
-        title="Questions, answered."
-        body="If what you need isn't here, write to us — a person will reply."
-        image={media.plants}
+        title="Everything you need to know."
+        body="Explore answers to the most common queries we receive from farmers, partners, and innovators around the world."
+        image={media.bannerFaq}
+        imageAlt="A grower reviewing notes among the crops"
       />
 
-      <section className="shell py-20 lg:py-28">
-        <div className="reveal grid gap-12 lg:grid-cols-[minmax(0,380px)_minmax(0,1fr)]">
-          <div>
-            <h2 className="text-h2">Still deciding?</h2>
-            <p className="mt-5 text-[17px] leading-relaxed text-muted">
-              Most conversations start with a field assessment. It costs nothing and it tells both
-              of us whether there is a fit.
-            </p>
-            <div className="mt-10">
-              <Button href="/contact-us">Ask us directly</Button>
-            </div>
-          </div>
-          <Accordion items={faqs} />
+      <section className="bg-paper py-20 lg:py-28">
+        <div className="shell">
+          <FaqGrid items={faqs} />
         </div>
       </section>
 

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ContactForm from "@/components/ContactForm";
-import { CTABand, PageHeader } from "@/components/sections";
+import { BannerHeader, CTABand } from "@/components/sections";
 import { media } from "@/lib/media";
 
 export const metadata: Metadata = {
@@ -22,23 +22,24 @@ const details = [
 export default function ContactUs() {
   return (
     <>
-      <PageHeader
+      <BannerHeader
         eyebrow="Contact us"
-        title="Let's work together."
+        title="Let's grow something great together."
         body="Tell us what you grow or what you buy, and we'll come back with a straight answer about whether we can help."
         image={media.bannerWide}
+        imageAlt="Farmland at golden hour"
       />
 
       <section className="shell py-20 lg:py-28">
-        <div className="reveal grid gap-14 lg:grid-cols-[minmax(0,1fr)_minmax(0,360px)]">
-          <div>
+        <div data-reveal-group className="grid gap-14 lg:grid-cols-[minmax(0,1fr)_minmax(0,360px)]">
+          <div data-reveal>
             <h2 className="text-h2">Send us a message.</h2>
             <div className="mt-10">
               <ContactForm />
             </div>
           </div>
 
-          <aside className="rounded-card bg-paper p-8">
+          <aside data-reveal className="rounded-card bg-paper p-8">
             <h2 className="text-[24px] font-medium">Get in touch</h2>
             <dl className="mt-8 space-y-7">
               {details.map((d) => (

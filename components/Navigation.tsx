@@ -27,8 +27,14 @@ export default function Navigation() {
   const [open, setOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
-  // The template's nav is transparent over the home hero and solid green elsewhere.
-  const overHero = pathname === "/";
+  /*
+   * Three nav states, matching the reference:
+   *  - over a full-bleed hero/banner: transparent, white text
+   *  - over a split header (white ground): transparent, dark text
+   *  - once scrolled past the header: solid green, white text
+   */
+  const bannerPages = ["/", "/solutions", "/our-team", "/contact-us"];
+  const overBanner = bannerPages.includes(pathname);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -49,18 +55,24 @@ export default function Navigation() {
     };
   }, [open]);
 
-  const solid = scrolled || !overHero;
+  const solid = scrolled;
+  const darkText = !solid && !overBanner;
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 text-white transition-colors duration-300 ${
-        solid ? "bg-brand" : "bg-transparent"
-      }`}
+      className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${
+        solid ? "bg-brand text-white" : "bg-transparent"
+      } ${darkText ? "text-ink" : "text-white"}`}
     >
       <div className="shell flex h-[90px] items-center justify-between gap-8">
         <Logo />
 
-        <nav aria-label="Primary" className="hidden items-center gap-9 lg:flex">
+        <nav
+          aria-label="Primary"
+          className={`hidden items-center gap-9 lg:flex ${
+            overBanner ? "" : "lg:ml-14 lg:mr-auto"
+          }`}
+        >
           {primary.map((l) => (
             <Link
               key={l.href}
@@ -111,7 +123,7 @@ export default function Navigation() {
 
         <Link
           href="/contact-us"
-          className="hidden items-center gap-2.5 rounded-pill bg-white/15 px-7 py-3.5 text-[15px] backdrop-blur-md ring-1 ring-white/25 transition-colors hover:bg-white/25 lg:inline-flex"
+          className="hidden items-center gap-2.5 rounded-pill bg-white/15 px-7 py-3.5 text-[15px] text-white ring-1 ring-white/25 backdrop-blur-md transition-colors hover:bg-white/25 lg:inline-flex"
         >
           <Leaf />
           Let&rsquo;s work together

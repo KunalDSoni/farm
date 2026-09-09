@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import Testimonials from "@/components/Testimonials";
-import { CTABand, PageHeader } from "@/components/sections";
+import { CTABand, SplitHeader } from "@/components/sections";
 import { Button, Leaf } from "@/components/ui";
 import { media } from "@/lib/media";
 import { plans, faqs } from "@/lib/content";
-import Accordion from "@/components/Accordion";
+import FaqGrid from "@/components/FaqGrid";
 
 export const metadata: Metadata = {
   title: "Pricing",
@@ -15,18 +15,20 @@ export const metadata: Metadata = {
 export default function Pricing() {
   return (
     <>
-      <PageHeader
+      <SplitHeader
         eyebrow="Pricing"
-        title="Plans that grow with your land."
+        title="Simple. Scalable. Designed for growth."
         body="Straightforward programme pricing. No tie-ins, no per-seat surprises — you pay for the seasons we work together."
-        image={media.fieldWide}
+        image={media.bannerPricing}
+        imageAlt="Workers tending a market garden"
       />
 
       <section className="shell py-20 lg:py-28">
-        <div className="reveal grid gap-6 lg:grid-cols-3">
+        <div data-reveal-group className="grid gap-6 lg:grid-cols-3">
           {plans.map((p) => (
             <article
               key={p.name}
+              data-reveal
               className={`flex flex-col rounded-card p-8 ${
                 p.featured
                   ? "bg-brand text-white ring-1 ring-brand"
@@ -73,9 +75,9 @@ export default function Pricing() {
       </section>
 
       <section className="bg-paper py-20 lg:py-28">
-        <div className="shell reveal grid gap-12 lg:grid-cols-[minmax(0,400px)_minmax(0,1fr)]">
+        <div className="shell grid gap-12 lg:grid-cols-[minmax(0,400px)_minmax(0,1fr)]">
           <h2 className="text-h2">Questions about pricing.</h2>
-          <Accordion items={faqs.slice(0, 4)} />
+          <FaqGrid items={faqs.slice(0, 4)} />
         </div>
       </section>
 

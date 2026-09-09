@@ -44,7 +44,7 @@ export default function Testimonials() {
 
   return (
     <section className="shell py-20 lg:py-28">
-      <div className="reveal flex flex-wrap items-end justify-between gap-8">
+      <div data-reveal className="flex flex-wrap items-end justify-between gap-8">
         <h2 className="max-w-lg text-h2">Trusted by farmers &amp; businesses worldwide.</h2>
         <div className="flex gap-3">
           <button
@@ -74,12 +74,14 @@ export default function Testimonials() {
 
       <div
         ref={trackRef}
+        data-reveal-group
         className="mt-12 flex snap-x snap-mandatory gap-6 overflow-x-auto pb-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
       >
         {testimonials.map((t) => (
           <figure
             key={t.name}
             data-card
+            data-reveal
             className={`flex w-[300px] shrink-0 snap-start flex-col justify-between rounded-card p-7 sm:w-[360px] ${tones[t.tone]}`}
           >
             <blockquote className="text-[17px] font-medium leading-snug">

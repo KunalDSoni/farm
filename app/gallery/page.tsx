@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { CTABand, PageHeader } from "@/components/sections";
+import { CTABand, SplitHeader } from "@/components/sections";
 import { media } from "@/lib/media";
 
 export const metadata: Metadata = {
@@ -22,18 +22,20 @@ const layout = [
 export default function Gallery() {
   return (
     <>
-      <PageHeader
+      <SplitHeader
         eyebrow="Gallery"
-        title="From our fields."
+        title="Moments that tell our story."
         body="Land, crops, and the people who work them — photographed across our growing regions."
         image={media.gallery[0]}
+        imageAlt="Workers harvesting vegetables"
       />
 
       <section className="shell py-20 lg:py-28">
-        <div className="reveal grid gap-6 sm:grid-cols-3">
+        <div data-reveal-group className="grid gap-6 sm:grid-cols-3">
           {media.gallery.map((src, i) => (
             <div
               key={src}
+              data-reveal
               className={`relative h-[280px] overflow-hidden rounded-card sm:h-[350px] ${layout[i] ?? "sm:col-span-1"}`}
             >
               <Image

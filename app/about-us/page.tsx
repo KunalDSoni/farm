@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Testimonials from "@/components/Testimonials";
-import { CTABand, PageHeader } from "@/components/sections";
+import { CTABand, SplitHeader } from "@/components/sections";
 import { Button, Leaf, Pill } from "@/components/ui";
 import { media } from "@/lib/media";
 import { stats, values } from "@/lib/content";
@@ -30,19 +30,20 @@ const principles = [
 export default function AboutUs() {
   return (
     <>
-      <PageHeader
+      <SplitHeader
         eyebrow="About us"
-        title="We are committed to advancing agriculture."
-        body="Rooted in tradition, driven by innovation — we grow more than crops, we grow impact."
+        title="Elevating global farming standards."
+        body="Modern Harvest is more than a company — we're a movement toward smarter, more sustainable farming."
         image={media.bannerAbout}
+        imageAlt="Aerial view of fields divided by a winding river"
       />
 
       <section className="shell py-20 lg:py-28">
-        <div className="reveal grid gap-12 lg:grid-cols-2">
-          <h2 className="text-h2">
+        <div data-reveal-group className="grid gap-12 lg:grid-cols-2">
+          <h2 data-reveal className="text-h2">
             Our mission is to redefine what&rsquo;s possible in modern farming.
           </h2>
-          <div className="space-y-5 text-[17px] leading-relaxed text-muted lg:pt-2">
+          <div data-reveal className="space-y-5 text-[17px] leading-relaxed text-muted lg:pt-2">
             <p>
               Modern Harvest began with a small group of family farms and a straightforward
               conviction: that agriculture can be both commercially serious and genuinely
@@ -57,9 +58,9 @@ export default function AboutUs() {
           </div>
         </div>
 
-        <div className="reveal mt-16 grid gap-6 sm:grid-cols-3">
+        <div data-reveal-group className="mt-16 grid gap-6 sm:grid-cols-3">
           {stats.map((s) => (
-            <div key={s.label} className="rounded-card bg-paper p-8">
+            <div key={s.label} data-reveal className="rounded-card bg-paper p-8">
               <Leaf className="h-5 w-5 text-brand" />
               <p className="mt-5 text-[52px] font-medium leading-none tracking-[-1.6px]">
                 {s.value}
@@ -72,7 +73,7 @@ export default function AboutUs() {
       </section>
 
       <section className="shell pb-20 lg:pb-28">
-        <div className="reveal relative aspect-[21/9] overflow-hidden rounded-card">
+        <div data-reveal className="relative aspect-[21/9] overflow-hidden rounded-card">
           <Image
             src={media.fieldWide}
             alt="Aerial view of cultivated fields divided by tree lines"
@@ -84,7 +85,7 @@ export default function AboutUs() {
       </section>
 
       <section className="bg-paper py-20 lg:py-28">
-        <div className="shell reveal grid gap-12 lg:grid-cols-[minmax(0,420px)_minmax(0,1fr)]">
+        <div data-reveal-group className="shell grid gap-12 lg:grid-cols-[minmax(0,420px)_minmax(0,1fr)]">
           <div>
             <Pill className="mb-6">How we work</Pill>
             <h2 className="text-h2">Three principles behind every programme.</h2>
@@ -98,7 +99,7 @@ export default function AboutUs() {
           </div>
           <dl className="space-y-0">
             {principles.map((p) => (
-              <div key={p.title} className="border-t border-black/10 py-7 first:border-t-0 first:pt-0">
+              <div key={p.title} data-reveal className="border-t border-black/10 py-7 first:border-t-0 first:pt-0">
                 <dt className="text-[24px] font-medium">{p.title}</dt>
                 <dd className="mt-3 max-w-xl text-[17px] leading-relaxed text-muted">{p.body}</dd>
               </div>
@@ -108,8 +109,8 @@ export default function AboutUs() {
       </section>
 
       <section className="shell py-20 lg:py-28">
-        <div className="reveal grid items-center gap-12 lg:grid-cols-2">
-          <div className="relative aspect-[3/4] overflow-hidden rounded-card">
+        <div data-reveal-group className="grid items-center gap-12 lg:grid-cols-2">
+          <div data-reveal className="relative aspect-[3/4] overflow-hidden rounded-card">
             <Image
               src={media.fieldTall}
               alt="Rows of young crops running toward the horizon"

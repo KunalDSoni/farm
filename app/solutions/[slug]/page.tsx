@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { CTABand, PageHeader, SolutionCard } from "@/components/sections";
+import { CTABand, SolutionCard, SplitHeader } from "@/components/sections";
 import { Leaf } from "@/components/ui";
 import { solutions } from "@/lib/content";
 
@@ -24,16 +24,16 @@ export default function SolutionDetail({ params }: Params) {
 
   return (
     <>
-      <PageHeader eyebrow="Our solutions" title={s.title} body={s.short} image={s.image} />
+      <SplitHeader eyebrow="Our solutions" title={s.title} body={s.short} image={s.image} imageAlt={s.title} />
 
       <section className="shell py-20 lg:py-28">
-        <div className="reveal grid gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,420px)]">
-          <div className="space-y-6 text-[19px] leading-relaxed">
+        <div data-reveal-group className="grid gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,420px)]">
+          <div data-reveal className="space-y-6 text-[19px] leading-relaxed">
             <p>{s.intro}</p>
             <p className="text-[17px] text-muted">{s.body}</p>
           </div>
 
-          <div className="space-y-10">
+          <div data-reveal className="space-y-10">
             <div>
               <h2 className="text-[24px] font-medium">Benefits</h2>
               <ul className="mt-5 space-y-3">
@@ -61,8 +61,8 @@ export default function SolutionDetail({ params }: Params) {
       </section>
 
       <section className="shell pb-20 lg:pb-28">
-        <h2 className="reveal text-h2">What else do we offer?</h2>
-        <div className="reveal mt-10 grid gap-6 sm:grid-cols-3">
+        <h2 data-reveal className="text-h2">What else do we offer?</h2>
+        <div data-reveal-group className="mt-10 grid gap-6 sm:grid-cols-3">
           {others.map((o) => (
             <SolutionCard key={o.slug} s={o} />
           ))}
