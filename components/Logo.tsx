@@ -2,7 +2,7 @@ import Link from "next/link";
 
 /**
  * Modern Harvest wordmark, drawn in the reference template's style:
- * a square grain glyph beside a two-line wordmark with a registered mark.
+ * a square grain glyph beside a two-line wordmark.
  * `currentColor` throughout so it inverts on the transparent/dark nav.
  */
 export default function Logo({ className = "" }: { className?: string }) {
@@ -25,7 +25,6 @@ export default function Logo({ className = "" }: { className?: string }) {
         <br />
         Harvest
       </span>
-      <span className="self-start pt-1 text-[9px] opacity-60">®</span>
     </Link>
   );
 }
